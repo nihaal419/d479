@@ -78,5 +78,20 @@
     <footer class="footer">
         <p>&copy; 2024 Taniti. All rights reserved. Address Address</p>
     </footer>
+
+    <script>
+        // Mark active nav item
+        document.addEventListener('DOMContentLoaded', function() {
+            const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+            const navLinks = document.querySelectorAll('.nav-menu a');
+            
+            navLinks.forEach(link => {
+                const linkPage = link.getAttribute('href');
+                if (linkPage === currentPage || (currentPage === 'index.html' && linkPage === 'index.html')) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
 </body>
 </html> 
